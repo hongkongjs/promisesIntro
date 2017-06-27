@@ -1,0 +1,57 @@
+.conv-text {
+    font-size: 14px;
+}
+
+.reveal .highlight-points {
+    color: darkorange;
+}
+
+/*.reveal code p {
+    margin: 1px;
+    line-height: 1px;
+}*/
+
+.reveal p.header {
+    text-align: center;
+    font-size: 40Dpx;
+    color: darkorange;
+}
+.reveal p.header-left {
+    text-align: left;
+    font-size: 40Dpx;
+}
+.reveal p.header-center-highlight {
+    text-align: center;
+    font-size: 40Dpx;
+    color: darkorange;
+}
+.reveal p.header-left-highlight {
+    text-align: center;
+    font-size: 40Dpx;
+    color: darkorange;
+    text-align:left;
+}
+.reveal p.def {
+    font-size: 30px;
+    text-align: left;
+}
+.reveal pre code{
+  max-height:none;
+  margin:0px;
+}
+.reveal pre code p {
+  margin:0px;
+}
+.reveal pre code mark {
+  margin:0px;
+}
+
+.reveal p.comparison{
+  font-size:30px;
+}
+.reveal p.topic-header{
+  font-size:20px;
+  position: fixed;
+  text-align: left;
+
+}

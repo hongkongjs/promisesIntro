@@ -1,0 +1,47 @@
+<section>
+    Promises
+</section>
+<section>
+    <p class="header-left-highlight">What?</p>
+    <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise"> A Promise represents a value which may be available now, or in the future, or never.</a>
+</section>
+<section>
+    <p class="header-left-highlight">Why?</p>
+    <img src="imgs/promises/callbacks.jpeg" alt="">
+</section>
+<section>
+    <img src="imgs/promises/pyramid-of-doom.png" alt="">
+</section>
+<section>
+    <p class="header-left-highlight">Syntax</p>
+    <pre><code>
+      new Promise(
+        (resolve,reject)=>{
+          //If successful
+          resolve(results);
+
+        //If it failed
+        reject(reason);
+    });
+  </code></pre>
+</section>
+<section>
+    <p class="header-left-highlight"> Example</p>
+    <pre class="fragment"><code>const getExchangeRates=(fail)=>{
+      console.log('fetching...');
+      return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+          if(fail){
+            reject("Request Failed 404 Network Error");
+          }else{
+            resolve({USD:1.0,HKD:0.13});
+          }
+        },2000)
+      });
+    }</code></pre>
+
+    <pre class="fragment"><code>getExchangeRates(true).then((res)=>{
+        console.log(res);
+      }).catch((err)=>{console.log('Error: ',err);})</code></pre>
+
+</section>
