@@ -1,4 +1,4 @@
-# promisesIntro
+# Introduction to js-Promises
 Introduction to Promises
 
 #### Dependencies
