@@ -5,13 +5,7 @@
     <p class="header-left-highlight">What?</p>
     <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise"> A Promise represents a value which may be available now, or in the future, or never.</a>
 </section>
-<section>
-    <p class="header-left-highlight">Why?</p>
-    <img src="imgs/promises/callbacks.jpeg" alt="">
-</section>
-<section>
-    <img src="imgs/promises/pyramid-of-doom.png" alt="">
-</section>
+
 <section>
     <p class="header-left-highlight">Syntax</p>
     <pre><code>
@@ -26,22 +20,50 @@
   </code></pre>
 </section>
 <section>
-    <p class="header-left-highlight"> Example</p>
-    <pre class="fragment"><code>const getExchangeRates=(fail)=>{
-      console.log('fetching...');
-      return new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-          if(fail){
-            reject("Request Failed 404 Network Error");
-          }else{
-            resolve({USD:1.0,HKD:0.13});
-          }
-        },2000)
-      });
-    }</code></pre>
+  <p class="header-left-highlight">Promise states</p>
+  <pre><code>
+  Pending: initial state, neither fulfilled nor rejected.
 
-    <pre class="fragment"><code>getExchangeRates(true).then((res)=>{
-        console.log(res);
-      }).catch((err)=>{console.log('Error: ',err);})</code></pre>
+  Resolved:  meaning that the operation completed successfully.
+
+  Rejected:  meaning that the operation failed.
+</code></pre>
+</section>
+<section>
+  <p class="header-center-highlight">Experiment</p>
+<pre><code>
+  function generateRandoms(){
+    return new Promise((resolve,reject)=>{
+      //wait for 5 seconds
+      var rand = getRandomVal();
+      if(rand>5 && rand<10){
+        resolve(rand);
+      }
+      //reject when value < 5
+      else if(rand<5){
+        reject("Value is too low");
+      }
+      //if not  throw exception
+      else{ throw new Error("Unknown value")}
+    });
+  }
+
+  //Call generateRandoms
+  generateRandoms()
+    .then((resolved_val)=>{},(reason)=>{}).catch((exception)=>{})
+</code></pre>
+</section>
+<section>
+    <p class="header-left-highlight">Why?</p>
+    <img src="imgs/promises/callbacks.jpeg" alt="">
+</section>
+
+<section>
+    <img src="imgs/promises/pyramid-of-doom.png" alt="">
+</section>
+
+<section>
+
+    QA
 
 </section>
